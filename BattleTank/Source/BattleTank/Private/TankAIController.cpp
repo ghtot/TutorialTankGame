@@ -2,10 +2,7 @@
 
 #include "TankAIController.h"
 
-ATank* ATankAIController::GetControlledTank() const
-{
-	return Cast<ATank>(GetPawn());
-}
+
 
 void ATankAIController::BeginPlay()
 {
@@ -13,3 +10,15 @@ void ATankAIController::BeginPlay()
 	GetControlledTank()->GetName();
 	UE_LOG(LogTemp, Warning, TEXT("Controlled AI tank name: %s"), *(GetControlledTank()->GetName()));
 }
+
+
+ATank* ATankAIController::GetControlledTank() const
+{
+	return Cast<ATank>(GetPawn());
+}
+
+ATank * ATankAIController::GetPlayerTank() const
+{
+	return nullptr;
+}
+
